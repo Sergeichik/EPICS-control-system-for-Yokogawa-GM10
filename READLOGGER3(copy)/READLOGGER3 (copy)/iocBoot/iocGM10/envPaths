@@ -1,0 +1,7 @@
+epicsEnvSet("IOC","iocGM10")
+epicsEnvSet("TOP","/home/vladimir/READLOGGER3")
+epicsEnvSet("SNCSEQ","/home/vladimir/EPICS/support/seq-2.2.9")
+epicsEnvSet("ASYN","/home/vladimir/EPICS/support/asyn")
+epicsEnvSet("STREAM","/home/vladimir/EPICS/support/StreamDevice")
+epicsEnvSet("NETDEV","/home/vladimir/EPICS/support/netDev")
+epicsEnvSet("EPICS_BASE","/home/vladimir/EPICS/epics-base")

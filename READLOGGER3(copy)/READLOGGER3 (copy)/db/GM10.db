@@ -1,0 +1,247 @@
+record(channels,"IR:paraffin:GM10:channels"){
+   field(SCAN,"1 second")
+   field(DTYP,"Darwin")
+   field(INP,"@192.168.11.101(34151)#001,030")
+   field(NELM,"30")
+   field(FLNK,"IR:paraffin:T1")
+}
+
+record(ai,"IR:paraffin:T1"){
+   field(SCAN,"Passive")
+   field(EGU,"degree")
+   field(INP,"IR:paraffin:GM10:channels.CH01")
+   field(DESC, "paraffin temp before HEX")
+   field(FLNK,"IR:paraffin:T2")
+}
+
+record(ai,"IR:paraffin:T2"){
+   field(SCAN,"Passive")
+   field(EGU,"degree")
+   field(INP,"IR:paraffin:GM10:channels.CH02")
+   field(DESC, "paraffin temp after HEX")
+   field(FLNK,"IR:paraffin:tankhumid")
+}
+
+record(ai,"IR:paraffin:tankhumid"){
+   field(SCAN,"Passive")
+   field(EGU,"%")
+   field(INP,"IR:paraffin:GM10:channels.CH03")
+   field(DESC, "tank relative humidity ")
+   field(FLNK,"IR:paraffin:T3")
+}
+
+record(ai,"IR:paraffin:T3"){
+   field(SCAN,"Passive")
+   field(EGU,"degree")
+   field(INP,"IR:paraffin:GM10:channels.CH04")
+   field(DESC, "paraffin temp before IP ")
+   field(FLNK,"IR:paraffin:T4")
+}
+
+record(ai,"IR:paraffin:T4"){
+   field(SCAN,"Passive")
+   field(EGU,"degree")
+   field(INP,"IR:paraffin:GM10:channels.CH05")
+   field(DESC, "paraffin temp after IP ")
+   field(FLNK,"IR:paraffin:P1")
+}
+
+record(ai,"IR:paraffin:P1"){
+   field(SCAN,"Passive")
+   field(EGU,"kPa")
+   field(INP,"IR:paraffin:GM10:channels.CH06")
+   field(DESC, "pressure before pump")
+   field(FLNK,"IR:paraffin:P2")
+}
+
+record(ai,"IR:paraffin:P2"){
+   field(SCAN,"Passive")
+   field(EGU,"kPa")
+   field(INP,"IR:paraffin:GM10:channels.CH07")
+   field(DESC, "pressure just after pump")
+   field(FLNK,"IR:paraffin:P3")
+}
+
+record(ai,"IR:paraffin:P3"){
+   field(SCAN,"Passive")
+   field(EGU,"kPa")
+   field(INP,"IR:paraffin:GM10:channels.CH08")
+   field(DESC, "pressure before IP")
+   field(FLNK,"IR:paraffin:P4")
+}
+
+record(ai,"IR:paraffin:P4"){
+   field(SCAN,"Passive")
+   field(EGU,"kPa")
+   field(INP,"IR:paraffin:GM10:channels.CH09")
+   field(DESC, "pressure after IP")
+   field(FLNK,"IR:paraffin:tanklevel")
+}
+
+record(ai,"IR:paraffin:tanklevel"){
+   field(SCAN,"Passive")
+   field(EGU,"mm")
+   field(INP,"IR:paraffin:GM10:channels.CH10")
+   field(DESC, "reserver tank level")
+   field(FLNK,"IR:paraffin:flow")
+}
+
+record(ai,"IR:paraffin:flow"){
+   field(SCAN,"Passive")
+   field(EGU,"L/min")
+   field(INP,"IR:paraffin:GM10:channels.CH11")
+   field(DESC, "paraffin flow rate")
+   field(FLNK,"IR:paraffin:watertemp")
+}
+
+record(ai,"IR:paraffin:watertemp"){
+   field(SCAN,"Passive")
+   field(EGU,"degree")
+   field(INP,"IR:paraffin:GM10:channels.CH12")
+   field(DESC, "chiller temp setting ")
+   field(FLNK,"IR:paraffin:waterflow")
+}
+
+record(ai,"IR:paraffin:waterflow"){
+   field(SCAN,"Passive")
+   field(EGU,"L/min")
+   field(INP,"IR:paraffin:GM10:channels.CH13")
+   field(DESC, "chiller flow rate")
+   field(FLNK,"IR:WATERLEAK:FWD")
+}
+
+record(ai,"IR:WATERLEAK:FWD"){
+   field(SCAN,"Passive")
+   field(EGU,"")
+   field(INP,"IR:paraffin:GM10:channels.CH14")
+   field(DESC, "waterleak sensor fwd")
+   field(FLNK,"IR:WATERLEAK:BWD")
+}
+
+record(ai,"IR:WATERLEAK:BWD"){
+   field(SCAN,"Passive")
+   field(EGU,"")
+   field(INP,"IR:paraffin:GM10:channels.CH15")
+   field(DESC, "waterleak sensor bwd")
+   field(FLNK,"IR:paraffin:ch16")
+}
+
+record(ai,"IR:paraffin:ch16"){
+   field(SCAN,"Passive")
+   field(EGU,"")
+   field(INP,"IR:paraffin:GM10:channels.CH16")
+   field(DESC, "spare channel #16")
+   field(FLNK,"IR:paraffin:ch17")
+}
+
+record(ai,"IR:paraffin:ch17"){
+   field(SCAN,"Passive")
+   field(EGU,"")
+   field(INP,"IR:paraffin:GM10:channels.CH17")
+   field(DESC, "spare channel #17")
+   field(FLNK,"IR:paraffin:ch18")
+}
+
+record(ai,"IR:paraffin:ch18"){
+   field(SCAN,"Passive")
+   field(EGU,"")
+   field(INP,"IR:paraffin:GM10:channels.CH18")
+   field(DESC, "spare channel #18")
+   field(FLNK,"IR:paraffin:ch19")
+}
+
+record(ai,"IR:paraffin:ch19"){
+   field(SCAN,"Passive")
+   field(EGU,"")
+   field(INP,"IR:paraffin:GM10:channels.CH19")
+   field(DESC, "spare channel #19")
+   field(FLNK,"IR:paraffin:ch20")
+}
+
+record(ai,"IR:paraffin:ch20"){
+   field(SCAN,"Passive")
+   field(EGU,"")
+   field(INP,"IR:paraffin:GM10:channels.CH20")
+   field(DESC, "spare channel #20")
+   field(FLNK,"IR:paraffin:T21")
+}
+
+record(ai,"IR:paraffin:T21"){
+   field(SCAN,"Passive")
+   field(EGU,"degree")
+   field(INP,"IR:paraffin:GM10:channels.CH21")
+   field(DESC, "IP pipe temp fwd ch1")
+   field(FLNK,"IR:paraffin:T22")
+}
+
+record(ai,"IR:paraffin:T22"){
+   field(SCAN,"Passive")
+   field(EGU,"degree")
+   field(INP,"IR:paraffin:GM10:channels.CH22")
+   field(DESC, "IP pipe temp fwd ch2")
+   field(FLNK,"IR:paraffin:T23")
+}
+
+record(ai,"IR:paraffin:T23"){
+   field(SCAN,"Passive")
+   field(EGU,"degree")
+   field(INP,"IR:paraffin:GM10:channels.CH23")
+   field(DESC, "IP pipe temp fwd ch3")
+   field(FLNK,"IR:paraffin:T24")
+}
+
+record(ai,"IR:paraffin:T24"){
+   field(SCAN,"Passive")
+   field(EGU,"degree")
+   field(INP,"IR:paraffin:GM10:channels.CH24")
+   field(DESC, "IP pipe temp fwd ch4")
+   field(FLNK,"IR:paraffin:T25")
+}
+
+record(ai,"IR:paraffin:T25"){
+   field(SCAN,"Passive")
+   field(EGU,"degree")
+   field(INP,"IR:paraffin:GM10:channels.CH25")
+   field(DESC, "IP pipe temp fwd ch5")
+   field(FLNK,"IR:paraffin:T26")
+}
+
+record(ai,"IR:paraffin:T26"){
+   field(SCAN,"Passive")
+   field(EGU,"degree")
+   field(INP,"IR:paraffin:GM10:channels.CH26")
+   field(DESC, "IP pipe temp bwd ch1")
+   field(FLNK,"IR:paraffin:T27")
+}
+
+record(ai,"IR:paraffin:T27"){
+   field(SCAN,"Passive")
+   field(EGU,"degree")
+   field(INP,"IR:paraffin:GM10:channels.CH27")
+   field(DESC, "IP pipe temp bwd ch2")
+   field(FLNK,"IR:paraffin:T28")
+}
+
+record(ai,"IR:paraffin:T28"){
+   field(SCAN,"Passive")
+   field(EGU,"degree")
+   field(INP,"IR:paraffin:GM10:channels.CH28")
+   field(DESC, "IP pipe temp bwd ch3")
+   field(FLNK,"IR:paraffin:T29")
+}
+
+record(ai,"IR:paraffin:T29"){
+   field(SCAN,"Passive")
+   field(EGU,"degree")
+   field(INP,"IR:paraffin:GM10:channels.CH29")
+   field(DESC, "IP pipe temp bwd ch4")
+   field(FLNK,"IR:paraffin:T30")
+}
+
+record(ai,"IR:paraffin:T30"){
+   field(SCAN,"Passive")
+   field(EGU,"degree")
+   field(INP,"IR:paraffin:GM10:channels.CH30")
+   field(DESC, "IP pipe temp bwd ch5")
+}
+
